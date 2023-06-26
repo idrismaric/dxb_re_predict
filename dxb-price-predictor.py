@@ -1,3 +1,4 @@
+pip install xgboost
 
 import streamlit as st
 import xgboost as xgb 
