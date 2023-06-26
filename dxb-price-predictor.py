@@ -1,13 +1,13 @@
-import subprocess
-subprocess.check_call(['pip', 'install', 'xgboost'])
+#import subprocess
+#subprocess.check_call(['pip', 'install', 'xgboost'])
 
 
 import streamlit as st
-import xgboost as xgb 
+#import xgboost as xgb 
 import pandas as pd
 
-model = xgb.Booster()
-model.load_model("xgbmodelBus.xgb")
+#model = xgb.Booster()
+#model.load_model("xgbmodelBus.xgb")
 input_data = pd.read_excel('inputdata.xlsx')
 training_data = pd.read_csv('ml_inputBus.csv')
 
