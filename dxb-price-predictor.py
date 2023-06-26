@@ -1,4 +1,6 @@
-!pip install xgboost
+import subprocess
+subprocess.check_call(['pip', 'install', 'xgboost'])
+
 
 import streamlit as st
 import xgboost as xgb 
