@@ -38,7 +38,7 @@ training_columns = training_data.columns
 st.write("training data columns taken")
 new_data_df = pd.DataFrame(columns=training_columns)
 st.write("formed an empty dataframe with training data columns")
-new_data_df = new_data_df.append(mod_data_df, ignore_index = True)
+new_data_df = pd.concat([new_data_df, mod_data_df], ignore_index=True, axis=0, sort=False)
 st.write("append with modified dataframe")
 new_data_df = new_data_df.fillna(0)
 st.write("Filled zeros on the empty cells")
