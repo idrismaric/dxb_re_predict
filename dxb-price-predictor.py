@@ -28,20 +28,20 @@ styled_table = (
 st.markdown(styled_table, unsafe_allow_html=True)
 
 dict = input_data.to_dict(orient='list')
-st.write("input data converted to dictionary")
+
 new_dict = {key: value[0] for key, value in dict.items()}
-st.write("defined key and values")
+
 mod_dict = {f'{key}_{value}' if isinstance(value, str) else key: (value if isinstance(value, (int, float)) else 1) for key, value in new_dict.items()}
 mod_data_df = pd.DataFrame.from_dict(mod_dict, orient='index').T
-st.write("replaced key with new values and replaced string values with 1. then, converted the mod dict to df")
+
 training_columns = training_data.columns
-st.write("training data columns taken")
+
 new_data_df = pd.DataFrame(columns=training_columns)
-st.write("formed an empty dataframe with training data columns")
+
 new_data_df = pd.concat([new_data_df, mod_data_df], ignore_index=True, axis=0, sort=False)
-st.write("append with modified dataframe")
+
 new_data_df = new_data_df.fillna(0)
-st.write("Filled zeros on the empty cells")
+
 
 
 ml_input = new_data_df.iloc[:,1:]
