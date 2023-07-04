@@ -2,7 +2,7 @@ import subprocess
 
 # Upgrade scipy using pip
 subprocess.check_call(['pip', 'install', '--upgrade', 'scipy', '--user'])
-
+subprocess.check_call(["pip", "install", "-r", "requirements.txt"])
 
 def train_xgboost_model(master_project):
     
@@ -14,7 +14,7 @@ def train_xgboost_model(master_project):
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import r2_score, mean_squared_error
     # Load data
-    data_load = pd.read_csv('D:/Dropbox/00 Documents/01 Documents/02 Work/03 Tableau\DLD Dashboards/Transactions.csv')
+    data_load = pd.read_csv('Transactions.csv')
 
     # Filter data based on master_project_en input
     data = data_load[data_load['master_project_en'] == master_project]
