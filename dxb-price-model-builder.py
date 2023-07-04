@@ -1,7 +1,6 @@
 import subprocess
 
 # Upgrade scipy using pip
-subprocess.check_call(['pip', 'install', '--upgrade', 'scipy', '--user'])
 subprocess.check_call(["pip", "install", "-r", "requirements.txt"])
 
 def train_xgboost_model(master_project):
