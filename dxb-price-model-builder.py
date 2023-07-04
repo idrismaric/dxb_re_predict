@@ -114,5 +114,5 @@ def train_xgboost_model(master_project):
 
     st.write("The Predicted value of the Property:", prediction)
 
-train_xgboost_model('800 Villas')
+train_xgboost_model('Business Bay')
 
